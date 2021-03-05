@@ -106,7 +106,9 @@ public class VentanaBuscar  extends JFrame implements ActionListener {
 		
 		textFecha=new JTextField();
 		textFecha.setBounds(80, 180, 190, 25);
+		textFecha.setEditable(false);
 		add(textFecha);
+		
 		
 		botonModificar.addActionListener(this);
 		botonEliminar.addActionListener(this);
@@ -153,7 +155,7 @@ public class VentanaBuscar  extends JFrame implements ActionListener {
 				personaController.modificarPersona(miPersona);
 				
 				if (PersonaServ.modificaPersona==true) {
-					habilita(true, false, false, false, false, false, true, false, true, true);	
+					habilita(true, false, false, false, false, true, false, true, true);	
 				}
 			} catch (Exception e2) {
 				JOptionPane.showMessageDialog(null,"Error en el Ingreso de Datos","Error",JOptionPane.ERROR_MESSAGE);
@@ -175,7 +177,7 @@ public class VentanaBuscar  extends JFrame implements ActionListener {
 		
 		if (e.getSource()==botonModificar)
 		{
-			habilita(false, true, true, true, true, true, false, true, false, false);
+			habilita(false, true, true, true, true, false, true, false, false);
 			
 		}
 		
@@ -216,7 +218,7 @@ public class VentanaBuscar  extends JFrame implements ActionListener {
 		textDireccion.setText(miPersona.getDireccionPersona()+"");
 		textDni.setText(miPersona.getDniPersona()+"");
 		textFecha.setText(miPersona.getFechaPersona());
-		habilita(true, false, false, false, false, false, true, false, true, true);
+		habilita(true, false, false, false, false, true, false, true, true);
 	}
 
 
@@ -231,7 +233,7 @@ public class VentanaBuscar  extends JFrame implements ActionListener {
 		textDireccion.setText("");
 		textDni.setText("");
 		textFecha.setText("");
-		habilita(true, false, false, false, false, false, true, false, true, true);
+		habilita(true, false, false, false, false, true, false, true, true);
 	}
 
 
@@ -248,14 +250,13 @@ public class VentanaBuscar  extends JFrame implements ActionListener {
 	 * @param bModificar
 	 * @param bEliminar
 	 */
-	public void habilita(boolean codigo, boolean nombre, boolean apellido, boolean direccion, boolean dni, boolean fecha, boolean bBuscar, boolean bGuardar, boolean bModificar, boolean bEliminar)
+	public void habilita(boolean codigo, boolean nombre, boolean apellido, boolean direccion, boolean dni, boolean bBuscar, boolean bGuardar, boolean bModificar, boolean bEliminar)
 	{
 		textCod.setEditable(codigo);
 		textNombre.setEditable(nombre);
 		textApellido.setEditable(apellido);
 		textDireccion.setEditable(direccion);
 		textDni.setEditable(dni);
-		textFecha.setEditable(fecha);
 		botonBuscar.setEnabled(bBuscar);
 		botonGuardar.setEnabled(bGuardar);
 		botonModificar.setEnabled(bModificar);

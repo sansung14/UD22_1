@@ -14,7 +14,7 @@ public class Conexion {
    static String bd = "UD22";
    static String login = "root";
    static String password = "1234";
-   static String url = "jdbc:mysql://192.168.1.200:3306/"+bd+"?useTimezone=true&serverTimezone=UTC";
+   static String url = "jdbc:mysql://192.168.1.204:3306/"+bd+"?useTimezone=true&serverTimezone=UTC";
 
    Connection conn = null;
 
